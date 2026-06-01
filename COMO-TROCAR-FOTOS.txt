@@ -10,19 +10,19 @@ o MESMO NOME. Não precisa editar nada no código.
   MAPA DAS FOTOS (qual arquivo aparece onde no site)
 ───────────────────────────────────────────────────────────
 
-SEÇÃO "SOBRE NÓS" (2 fotos verticais, lado a lado):
+SEÇÃO "SOBRE NÓS" (2 fotos verticais, à direita do texto):
   fotos/sobre-1.jpg   → foto da esquerda
   fotos/sobre-2.jpg   → foto da direita
-  Formato ideal: vertical (retrato), ex: 600x900px
+  Formato ideal: VERTICAL (retrato) — 600x900px (proporção 2:3)
 
-SEÇÃO "BEHIND THE SCENES" (grid de 6 fotos):
-  fotos/bts-1.jpg   → foto grande (banner, em cima à esquerda)
-  fotos/bts-2.jpg   → foto em cima à direita
-  fotos/bts-3.jpg   → linha do meio, esquerda
-  fotos/bts-4.jpg   → linha do meio, centro
-  fotos/bts-5.jpg   → linha do meio, direita
-  fotos/bts-6.jpg   → embaixo à esquerda
-  Formato ideal: horizontal (paisagem), ex: 1200x900px
+SEÇÃO "BEHIND THE SCENES" (grid de 6 fotos, 3 em cima 3 embaixo):
+  fotos/bts-1.jpg   → linha de cima, esquerda
+  fotos/bts-2.jpg   → linha de cima, centro
+  fotos/bts-3.jpg   → linha de cima, direita
+  fotos/bts-4.jpg   → linha de baixo, esquerda
+  fotos/bts-5.jpg   → linha de baixo, centro
+  fotos/bts-6.jpg   → linha de baixo, direita
+  Formato PADRÃO: 1200x800px (proporção 3:2, horizontal)
 
 LOGO (nav topo + rodapé):
   fotos/logo.png   → logo serifada PROD ROLLS (fundo transparente)
@@ -43,6 +43,7 @@ VÍDEO DO HERO (fundo da primeira tela):
    git push
 
 3. Em ~1 minuto o site atualiza sozinho.
+4. Veja em aba anônima (Ctrl+Shift+N) pra evitar cache.
 
 DICA: se a foto nova tiver nome diferente, RENOMEIE para o
 nome exato da lista acima antes de colocar na pasta.

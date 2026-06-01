@@ -34,23 +34,23 @@
 
     /* ─── BTS SECTION ────────────────────────────────── */
     /*
-      GRID BTS — COMO ATUALIZAR:
-      Cada .bts-item tem um número comentado (#1 a #6).
-      Substitua só o src="data:image/jpeg;base64,..." da <img> correspondente.
-      Formatos recomendados:
-        #1 (banner): qualquer landscape — vai ocupar 2 colunas
-        #2, #3, #4, #5, #6: 4:3 landscape (ex: 1200x900px)
+      GRID BTS — 6 fotos, 3 em cima e 3 embaixo.
+      Formato padrão: 1200x800 (proporção 3:2).
+      Substitua fotos/bts-1.jpg ... bts-6.jpg (mesmos nomes).
     */
     .bts { padding: var(--gap) clamp(1.5rem, 5vw, 3.5rem); border-top: 1px solid rgba(255,255,255,0.06); }
 
     .bts-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto auto;
       gap: 0.5rem;
     }
 
-    .bts-item { overflow: hidden; background: #000; }
+    .bts-item {
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 3 / 2;
+    }
 
     .bts-item img {
       width: 100%; height: 100%; object-fit: cover; display: block;
@@ -59,31 +59,12 @@
     }
     .bts-item:hover img { transform: scale(1.04); filter: grayscale(0%); }
 
-    /* #1: banner — 2 colunas, linha 1 */
-    .bts-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 16/9; }
-
-    /* #2: coluna 3, linha 1 — mesma altura do banner */
-    .bts-item:nth-child(2) { grid-column: 3 / 4; grid-row: 1; aspect-ratio: 16/9; }
-
-    /* #3, #4, #5: linha 2 — 3 colunas iguais */
-    .bts-item:nth-child(3) { grid-column: 1/2; grid-row: 2; aspect-ratio: 4/3; }
-    .bts-item:nth-child(4) { grid-column: 2/3; grid-row: 2; aspect-ratio: 4/3; }
-    .bts-item:nth-child(5) { grid-column: 3/4; grid-row: 2; aspect-ratio: 4/3; }
-
-    /* #6: coluna 1, linha 3 — preenche o espaço embaixo do banner */
-    .bts-item:nth-child(6) { grid-column: 1/2; grid-row: 3; aspect-ratio: 4/3; }
-
     @media (max-width: 768px) {
       .bts-grid { grid-template-columns: 1fr 1fr; }
-      .bts-item:nth-child(1) { grid-column: 1/3; grid-row: auto; aspect-ratio: 16/9; }
-      .bts-item:nth-child(2),
-      .bts-item:nth-child(3),
-      .bts-item:nth-child(4),
-      .bts-item:nth-child(5),
-      .bts-item:nth-child(6) { grid-column: auto; grid-row: auto; aspect-ratio: 4/3; }
     }
     @media (max-width: 500px) {
       .bts-grid { grid-template-columns: 1fr; }
+    }
       .bts-item { aspect-ratio: 4/3 !important; grid-column: auto !important; }
     }
       .bts-item { aspect-ratio: 4/3 !important; grid-column: auto !important; }
@@ -110,9 +91,9 @@
       padding: var(--gap) clamp(1.5rem, 5vw, 3.5rem);
       border-top: 1px solid rgba(255,255,255,0.06);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(3rem, 6vw, 6rem);
-      align-items: start;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
     }
 
     .sobre-label {
@@ -120,7 +101,7 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--red);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
     .sobre-label::before { content: ''; }
@@ -133,33 +114,30 @@
       letter-spacing: -0.02em;
       line-height: 0.88;
       color: var(--white);
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .sobre-text {
-      font-size: clamp(0.85rem, 1.3vw, 1rem);
-      line-height: 1.75;
-      color: rgba(255,255,255,0.55);
+      font-family: "aktiv-grotesk", sans-serif;
       font-weight: 400;
-      max-width: 36ch;
-      margin-bottom: 0;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      line-height: 1.5;
+      color: rgba(255,255,255,0.92);
+      max-width: 30ch;
     }
 
-    .sobre > div:first-child {
-      padding-top: 0.5rem;
-    }
-
-    /* 2 fotos lado a lado, portrait */
+    /* fotos menores — 2 colunas portrait */
     .sobre-photos {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.6rem;
+      max-width: 480px;
+      margin-left: auto;
     }
 
     /*
-      FOTOS SOBRE NÓS — COMO ATUALIZAR:
-      Formato recomendado: 2:3 portrait (600x900px)
-      Substitua o src="data:image/jpeg;base64,..." de cada .sobre-photo
+      FOTOS SOBRE NÓS — formato 2:3 portrait (600x900px)
+      Substitua fotos/sobre-1.jpg e fotos/sobre-2.jpg
     */
     .sobre-photo {
       border-radius: 12px;
@@ -173,12 +151,12 @@
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
     }
     .sobre-photo:hover img { transform: scale(1.04); }
-
-    /* fotos alinhadas pelo topo */
     .sobre-photo:nth-child(2) { margin-top: 0; }
 
     @media (max-width: 860px) {
-      .sobre { grid-template-columns: 1fr; gap: 2rem; }
+      .sobre { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sobre-photos { grid-template-columns: 1fr 1fr; max-width: 100%; margin-left: 0; }
+    }
       .sobre-photo:nth-child(2) { margin-top: 0; }
       .sobre-photos { grid-template-columns: 1fr 1fr; max-width: 480px; }
     }
@@ -983,7 +961,7 @@
         <p class="contato-label" style="margin-bottom: 1rem;">Social</p>
         <ul class="social-list">
           <li><a href="https://instagram.com/prod.rolls" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://vimeo.com/prodrolls" target="_blank" rel="noopener">Vimeo</a></li>
+          <li><a href="https://www.tiktok.com/@prod.rolls_" target="_blank" rel="noopener">TikTok</a></li>
           <li><a href="https://behance.net/prodrolls" target="_blank" rel="noopener">Behance</a></li>
           <li><a href="https://www.youtube.com/@prod.rolls." target="_blank" rel="noopener">YouTube</a></li>
         </ul>
