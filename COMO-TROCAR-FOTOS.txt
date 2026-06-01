@@ -1,0 +1,49 @@
+═══════════════════════════════════════════════════════════
+  COMO TROCAR AS FOTOS DO SITE — SEM ABRIR O VSCODE
+═══════════════════════════════════════════════════════════
+
+Todas as fotos estão na pasta "fotos".
+Para trocar qualquer uma, basta SUBSTITUIR o arquivo mantendo
+o MESMO NOME. Não precisa editar nada no código.
+
+───────────────────────────────────────────────────────────
+  MAPA DAS FOTOS (qual arquivo aparece onde no site)
+───────────────────────────────────────────────────────────
+
+SEÇÃO "SOBRE NÓS" (2 fotos verticais, lado a lado):
+  fotos/sobre-1.jpg   → foto da esquerda
+  fotos/sobre-2.jpg   → foto da direita
+  Formato ideal: vertical (retrato), ex: 600x900px
+
+SEÇÃO "BEHIND THE SCENES" (grid de 6 fotos):
+  fotos/bts-1.jpg   → foto grande (banner, em cima à esquerda)
+  fotos/bts-2.jpg   → foto em cima à direita
+  fotos/bts-3.jpg   → linha do meio, esquerda
+  fotos/bts-4.jpg   → linha do meio, centro
+  fotos/bts-5.jpg   → linha do meio, direita
+  fotos/bts-6.jpg   → embaixo à esquerda
+  Formato ideal: horizontal (paisagem), ex: 1200x900px
+
+LOGO (nav topo + rodapé):
+  fotos/logo.png   → logo serifada PROD ROLLS (fundo transparente)
+
+VÍDEO DO HERO (fundo da primeira tela):
+  fotos/hero-video.mp4   → vídeo em loop
+  Formato ideal: MP4, 1920x1080, 5-15 segundos, sem áudio
+
+───────────────────────────────────────────────────────────
+  COMO PUBLICAR A TROCA
+───────────────────────────────────────────────────────────
+
+1. Substitua o arquivo na pasta "fotos" (mesmo nome)
+2. Abra o terminal na pasta do projeto e rode:
+
+   git add .
+   git commit -m "troca de fotos"
+   git push
+
+3. Em ~1 minuto o site atualiza sozinho.
+
+DICA: se a foto nova tiver nome diferente, RENOMEIE para o
+nome exato da lista acima antes de colocar na pasta.
+═══════════════════════════════════════════════════════════
