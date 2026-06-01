@@ -88,12 +88,19 @@
 
     /* ─── SOBRE NÓS ──────────────────────────────────── */
     .sobre {
-      padding: var(--gap) clamp(1.5rem, 5vw, 3.5rem);
       border-top: 1px solid rgba(255,255,255,0.06);
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: clamp(3rem, 7vw, 7rem);
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      min-height: 90vh;
+    }
+
+    /* coluna texto — com padding */
+    .sobre-content {
+      padding: clamp(2rem, 5vw, 5rem) clamp(1.5rem, 5vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .sobre-label {
@@ -123,26 +130,22 @@
       font-size: clamp(1.1rem, 2vw, 1.6rem);
       line-height: 1.5;
       color: rgba(255,255,255,0.92);
-      max-width: 30ch;
+      max-width: 32ch;
     }
 
-    /* fotos menores — 2 colunas portrait */
+    /* fotos preenchem toda a coluna direita, altura total */
     .sobre-photos {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-      max-width: 480px;
-      margin-left: auto;
+      gap: 0;
     }
 
     /*
-      FOTOS SOBRE NÓS — formato 2:3 portrait (600x900px)
+      FOTOS SOBRE NÓS — formato 2:3 portrait (800x1200px)
       Substitua fotos/sobre-1.jpg e fotos/sobre-2.jpg
     */
     .sobre-photo {
-      border-radius: 12px;
       overflow: hidden;
-      aspect-ratio: 2 / 3;
       background: #111;
     }
 
@@ -151,10 +154,11 @@
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
     }
     .sobre-photo:hover img { transform: scale(1.04); }
-    .sobre-photo:nth-child(2) { margin-top: 0; }
 
-    @media (max-width: 860px) {
-      .sobre { grid-template-columns: 1fr; gap: 2.5rem; }
+    @media (max-width: 700px) {
+      .sobre { grid-template-columns: 1fr; min-height: unset; }
+      .sobre-photos { height: 70vh; }
+    }
       .sobre-photos { grid-template-columns: 1fr 1fr; max-width: 100%; margin-left: 0; }
     }
       .sobre-photo:nth-child(2) { margin-top: 0; }
@@ -675,16 +679,12 @@
   </section>
 <!-- SOBRE NÓS -->
   <section class="sobre">
-    <div>
+    <div class="sobre-content">
       <p class="sobre-label">Sobre nós</p>
       <h2 class="sobre-title">Creative<br>Producer</h2>
       <p class="sobre-text">Cofundada em 2022 por Kevin Zorzan e João Marcelo Rosa, dois amigos de infância apaixonados pelo audiovisual, a Prod Rolls atua desenvolvendo projetos em diversas áreas: VideoClipes, Full Set, Vídeos Publicitários e Animações.</p>
     </div>
     <div class="sobre-photos">
-      <!--
-        FOTOS DA SEÇÃO SOBRE — formato recomendado: 2:3 portrait (600×900px)
-        Para trocar: substitua o src="data:image/jpeg;base64,..." abaixo
-      -->
       <div class="sobre-photo">
         <img src="fotos/sobre-1.jpg" alt="Prod Rolls — equipe" loading="lazy">
       </div>
